@@ -85,23 +85,29 @@ if __name__ == "__main__":
         F.count("rating").alias("rating_count")
     )
 ```
-    # Join with the movie titles
+# Join with the movie titles
+```
     movieRatingsWithCount = movieStats.join(moviesDataset, "movie_id").select("movie_id", "title", "avg_rating", "rating_count")
-
-    # Identify the top ten movies with the highest average rating 
+```
+# Identify the top ten movies with the highest average rating 
+```
     topTenMovies = movieRatingsWithCount.orderBy(F.desc("avg_rating")).limit(10).select("movie_id", "title", "avg_rating", "rating_count")
-
-    # Display the top ten movies with the highest rating count
+```
+# Display the top ten movies with the highest rating count
+```
     print("Top ten movies with the highest rating average:")
     topTenMovies.show(truncate=False)
-    
-    # Identify the top ten movies with the highest rating count
-    topTenMoviesRatingCount = movieRatingsWithCount.orderBy(F.desc("rating_count")).limit(10).select("movie_id", "title", "avg_rating", "rating_count")
+```
 
-    # Display the top ten movies with the highest rating count
+# Identify the top ten movies with the highest rating count
+```
+    topTenMoviesRatingCount = movieRatingsWithCount.orderBy(F.desc("rating_count")).limit(10).select("movie_id", "title", "avg_rating", "rating_count")
+```
+# Display the top ten movies with the highest rating count
+```
     print("Top ten movies with the highest rating count:")
     topTenMoviesRatingCount.show(truncate=False)
-
+```
     # Filter out movies with less than 10 ratings
     popularMovies = movieStats.filter("rating_count > 10")
 
