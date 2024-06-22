@@ -108,79 +108,72 @@ if __name__ == "__main__":
     print("Top ten movies with the highest rating count:")
     topTenMoviesRatingCount.show(truncate=False)
 ```
-    # Filter out movies with less than 10 ratings
+# Filter out movies with less than 10 ratings
     popularMovies = movieStats.filter("rating_count > 10")
 
-    # Join with the movie titles
+# Join with the movie titles
     movieRatingsWithCount1 = popularMovies.join(moviesDataset, "movie_id").select("movie_id", "title", "avg_rating", "rating_count")
 
-    # Identify the movie with the highest average rating
+# Identify the movie with the highest average rating
     topMovie = movieRatingsWithCount1.orderBy(F.desc("avg_rating")).limit(10).select("movie_id", "title", "avg_rating", "rating_count")
 
-    # Display the movie with the highest average rating
+# Display the movie with the highest average rating
     print("Movie with the highest average rating (with more than 10 ratings count):")
     topMovie.show(truncate=False)
 
-    # Find the users who have rated at least 50 movies
+# Find the users who have rated at least 50 movies
     usersWith50Ratings = ratingsDataset.groupBy("user_id").agg(F.count("rating").alias("num_ratings")).filter("num_ratings >= 50")
 
-    # Explode genres array for easier aggregation
+# Explode genres array for easier aggregation
     explodedMoviesDataset = moviesDataset.withColumn("genre", F.explode(F.col("genres")))
 
-    # Join datasets to get user, rating, and genre information
+# Join datasets to get user, rating, and genre information
     usersGenres = ratingsDataset.join(explodedMoviesDataset, "movie_id").join(usersWith50Ratings, "user_id")
 
-    # Aggregate to find the count of ratings per genre for each user
+# Aggregate to find the count of ratings per genre for each user
     usersGenresCount = usersGenres.groupBy("user_id", "genre").agg(F.count("genre").alias("genre_count"))
 
-    # Window function to identify favourite genre(s) for each user
+# Window function to identify favourite genre(s) for each user
     windowSpec = Window.partitionBy("user_id").orderBy(F.desc("genre_count"))
 
     favouriteGenres = usersGenresCount.withColumn("rank", F.rank().over(windowSpec)).filter(F.col("rank") == 1).drop("rank")
 
-    # Join with usersDataset to get gender
+# Join with usersDataset to get gender
     favouriteGenresWithGender = favouriteGenres.join(usersDataset, "user_id").select("user_id", "gender", "genre", "genre_count")
 
-    # Display the users who have rated at least 50 movies, their favourite movie genres, and gender (top 10)
+# Display the users who have rated at least 50 movies, their favourite movie genres, and gender (top 10)
     print("Top ten users who have rated at least 50 movies, their favourite movie genres, and gender:")
     favouriteGenresWithGender.show(10, truncate=False)
 
-    # Find all the users with age less than 20 years old
+# Find all the users with age less than 20 years old
     youngUsers = usersDataset.filter(usersDataset["age"] < 20)
 
-    # Display the users with age less than 20 years old (top 10)
+# Display the users with age less than 20 years old (top 10)
     print("Top ten users with age less than 20 years old:")
     youngUsers.show(10, truncate=False)
 
-    # Find all the users who have the occupation "scientist" and their age is between 30 and 40 years old
+# Find all the users who have the occupation "scientist" and their age is between 30 and 40 years old
     scientistUsers = usersDataset.filter((usersDataset["occupation"] == "scientist") & (usersDataset["age"] >= 30) & (usersDataset["age"] <= 40))
 
-    # Display the users who have the occupation "scientist" and their age is between 30 and 40 years old (top 10)
+# Display the users who have the occupation "scientist" and their age is between 30 and 40 years old (top 10)
     print("Top ten users who have the occupation 'scientist' and their age is between 30 and 40 years old:")
     scientistUsers.show(10, truncate=False)
-    
-    # Write the movieRatings DataFrame into Cassandra keyspace
+
+# Write the movieRatings DataFrame into Cassandra keyspace
     write_to_cassandra(movieRatings, "movie_ratings", "movielens")
 
-    # Write the topTenMovies DataFrame into Cassandra keyspace
+# Write the DataFrame into Cassandra keyspace
+```
     write_to_cassandra(topTenMovies, "top_ten_movies_avg_rating", "movielens")
-
-    # Write the topTenMoviesRatingCount DataFrame into Cassandra keyspace
     write_to_cassandra(topTenMoviesRatingCount, "top_ten_movies_rating_count", "movielens")
-
-    # Write the movieRatingsWithCount1 DataFrame into Cassandra keyspace
     write_to_cassandra(movieRatingsWithCount1, "popular_movies", "movielens")
-
-    # Write the favouriteGenresWithGender DataFrame into Cassandra keyspace
     write_to_cassandra(favouriteGenresWithGender, "favourite_genres", "movielens")
-
-    # Write the youngUsers DataFrame into Cassandra keyspace
     write_to_cassandra(youngUsers, "young_users", "movielens")
-
-    # Write the scientistUsers DataFrame into Cassandra keyspace
     write_to_cassandra(scientistUsers, "scientist_users", "movielens")
-
-    # Read the tables back from Cassandra into new DataFrames
+    
+```
+# Read the tables back from Cassandra into new DataFrames
+```
     movieRatingsFromCassandra = read_from_cassandra("movie_ratings", "movielens")
     topTenMoviesFromCassandra = read_from_cassandra("top_ten_movies_avg_rating", "movielens")
     topTenMoviesRatingCountFromCassandra = read_from_cassandra("top_ten_movies_rating_count", "movielens")
@@ -188,8 +181,9 @@ if __name__ == "__main__":
     favouriteGenresFromCassandra = read_from_cassandra("favourite_genres", "movielens")
     youngUsersFromCassandra = read_from_cassandra("young_users", "movielens")
     scientistUsersFromCassandra = read_from_cassandra("scientist_users", "movielens")
-
-    # Display the DataFrames read back from Cassandra
+```
+# Display the DataFrames read back from Cassandra
+```
     print("Movie ratings from Cassandra:")
     movieRatingsFromCassandra.show(10, truncate=False)
 
@@ -210,6 +204,8 @@ if __name__ == "__main__":
 
     print("Scientist users from Cassandra:")
     scientistUsersFromCassandra.show(10, truncate=False)
-
-    # Stop the SparkSession
+```
+# Stop the SparkSession
+```
     spark.stop()
+```
