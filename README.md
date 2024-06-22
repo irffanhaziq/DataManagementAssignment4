@@ -6,6 +6,7 @@ from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
 # List of genre names based on the u.item file structure
+```
 genre_names = [
     "unknown", "Action", "Adventure", "Animation", "Children's", "Comedy",
     "Crime", "Documentary", "Drama", "Fantasy", "Film-Noir", "Horror",
@@ -44,7 +45,7 @@ if __name__ == "__main__":
         .appName("MovieLensAnalysis") \
         .config("spark.cassandra.connection.host", "127.0.0.1") \
         .getOrCreate()
-
+```
     # Load the ratings data
     ratings_lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/irffan/ml-100k/u.data")
     ratings = ratings_lines.map(parse_rating)
