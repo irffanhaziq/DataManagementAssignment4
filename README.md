@@ -46,37 +46,45 @@ if __name__ == "__main__":
         .config("spark.cassandra.connection.host", "127.0.0.1") \
         .getOrCreate()
 ```
-    # Load the ratings data
+# Load the ratings data
+```
     ratings_lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/irffan/ml-100k/u.data")
     ratings = ratings_lines.map(parse_rating)
     ratingsDataset = spark.createDataFrame(ratings)
-
-    # Load the movies data
+```
+# Load the movies data
+```
     movies_lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/irffan/ml-100k/u.item")
     movies = movies_lines.map(parse_movie)
     moviesDataset = spark.createDataFrame(movies)
+```
 
-    # Load the users data
+# Load the users data
+```
     users_lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/irffan/ml-100k/u.user")
     users = users_lines.map(parse_user)
     usersDataset = spark.createDataFrame(users)
-
-    # Calculate the average rating for each movie
+```
+# Calculate the average rating for each movie
+```
     averageRatings = ratingsDataset.groupBy("movie_id").agg(F.avg("rating").alias("avg_rating"))
-
-    # Join with the movie titles
+```
+# Join with the movie titles
+```
     movieRatings = averageRatings.join(moviesDataset, "movie_id").select("movie_id", "title", "avg_rating")
-
-    # Display the average rating for each movie (top 10 without sorting)
+```
+# Display the average rating for each movie (top 10 without sorting)
+```
     print("Average rating for each movie:")
     movieRatings.show(10, truncate=False)
-
-    # Calculate the average rating and count of ratings for each movie
+```
+# Calculate the average rating and count of ratings for each movie
+```
     movieStats = ratingsDataset.groupBy("movie_id").agg(
         F.avg("rating").alias("avg_rating"),
         F.count("rating").alias("rating_count")
     )
-
+```
     # Join with the movie titles
     movieRatingsWithCount = movieStats.join(moviesDataset, "movie_id").select("movie_id", "title", "avg_rating", "rating_count")
 
