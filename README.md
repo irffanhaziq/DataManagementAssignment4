@@ -1,10 +1,10 @@
 # DataManagementAssignment
-
+```
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
-
+```
 # List of genre names based on the u.item file structure
 ```
 genre_names = [
