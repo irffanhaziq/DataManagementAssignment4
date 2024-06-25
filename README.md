@@ -230,7 +230,7 @@ if __name__ == "__main__":
 ```
 
 ## Results
-#### Average Rating for Each Movie
+#### Average Rating for Each Movie :
 
 | movie_id | title | avg_rating |
 |----------|-------|-------------|
@@ -245,7 +245,7 @@ if __name__ == "__main__":
 | 541 | Mortal Kombat (1995) |2.877551020408163 |
 | 558 | Heavenly Creatures (1994) | 3.6714285714285713 |
 
-#### Top Ten Movies with the Highest Average Ratings
+#### Top Ten Movies with the Highest Average Ratings :
 
 | movie_id | title | avg_rating | rating_count |
 |----------|-------|-------------|--------------|
@@ -291,7 +291,7 @@ if __name__ == "__main__":
 |50      |Star Wars (1977)                                      |4.3584905660377355|583         |
 |178     |12 Angry Men (1957)                                   |4.344             |125         |
 
-#### Users Who Have Rated at Least 50 Movies and Their Favourite Genres
+#### Top ten users who have rated at least 50 movies, their favourite movie genres, and gender:
 
 | user_id | gender | genre | genre_count |
 |---------|--------|-------|-------------|
@@ -306,7 +306,7 @@ if __name__ == "__main__":
 | 243 | M | Drama | 59 |
 | 367 | M | Horror | 31 |
 
-#### Users with Age Less Than 20 Years Old
+#### Top ten users with age less than 20 years old:
 
 | age | gender | occupation | user_id | zip_code |
 |-----|--------|------------|---------|----------|
@@ -321,7 +321,7 @@ if __name__ == "__main__":
 | 13 | M | other | 142 | 48118 |
 | 15 | M | entertainment | 179 | 20755 |
 
-#### Users with Occupation "Scientist" and Age Between 30 and 40 Years Old
+#### Top ten users who have the occupation 'scientist' and their age is between 30 and 40 years old:
 
 | age | gender | occupation | user_id | zip_code |
 |-----|--------|------------|---------|----------|
