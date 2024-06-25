@@ -275,6 +275,22 @@ if __name__ == "__main__":
 |300     |Air Force One (1997)         |3.6310904872389793|431         |
 |121     |Independence Day (ID4) (1996)|3.438228438228438 |429         |
 
+
+#### Movie with the highest average rating (with more than 10 ratings count):
+
+|movie_id|title                                                 |avg_rating        |rating_count|
+|--------|------------------------------------------------------|------------------|------------|
+|408     |Close Shave, A (1995)                                 |4.491071428571429 |112         |
+|318     |Schindler's List (1993)                               |4.466442953020135 |298         |
+|169     |Wrong Trousers, The (1993)                            |4.466101694915254 |118         |
+|483     |Casablanca (1942)                                     |4.45679012345679  |243         |
+|114     |Wallace & Gromit: The Best of Aardman Animation (1996)|4.447761194029851 |67          |
+|64      |Shawshank Redemption, The (1994)                      |4.445229681978798 |283         |
+|603     |Rear Window (1954)                                    |4.3875598086124405|209         |
+|12      |Usual Suspects, The (1995)                            |4.385767790262173 |267         |
+|50      |Star Wars (1977)                                      |4.3584905660377355|583         |
+|178     |12 Angry Men (1957)                                   |4.344             |125         |
+
 #### Users Who Have Rated at Least 50 Movies and Their Favourite Genres
 
 | user_id | gender | genre | genre_count |
