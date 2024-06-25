@@ -419,5 +419,4 @@ This list shows that younger users (under 20) are predominantly male and mostly 
 7. Top ten users who have the occupation 'scientist' and their age is between 30 and 40 years old:
 This group consists entirely of male scientists in their 30s, with ages ranging from 31 to 40. This could indicate a gender imbalance in this particular demographic of the user base, or in the scientific profession during the time this data was collected.
 
-Overall, these outputs provide valuable insights into user demographics, movie preferences, and rating patterns within this dataset. They highlight popular and highly-rated movies, active user characteristics, and some interesting demographic trends among different user groups.
 
