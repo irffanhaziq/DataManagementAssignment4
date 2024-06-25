@@ -396,3 +396,28 @@ cqlsh> CREATE TABLE IF NOT EXISTS movielens.scientist_users (
 | 37 | M | scientist | 337 | 10522 |
 | 38 | M | scientist | 430 | 98199 |
 | 31 | M | scientist | 538 | 21010 |
+
+## Insight
+1. Average rating for each movie:
+This table shows the average ratings for 10 movies. The ratings range from 2.67 to 4.25, with "Dr. Strangelove" (1963) having the highest average rating of 4.25 and "Batman Forever" (1995) having the lowest at 2.67. This gives us a snapshot of how these particular movies were received by viewers.
+
+2. Top ten movies with the highest rating average:
+Interestingly, all movies in this list have a perfect 5.0 rating. However, it's crucial to note that most of these movies have very few ratings (1-3 counts). This suggests that while these movies are highly rated, the sample size is too small to draw meaningful conclusions about their overall popularity or quality.
+
+3. Top ten movies with the highest rating count:
+This list provides more reliable insights as it shows popular movies with a large number of ratings. "Star Wars" (1977) tops the list with 583 ratings and an average of 4.36, indicating both popularity and high quality. Other well-known films like "Fargo," "Return of the Jedi," and "Toy Story" also appear, showing a mix of different genres among the most-rated movies.
+
+4. Movie with the highest average rating (with more than 10 ratings count):
+This list is more meaningful as it combines high ratings with a significant number of reviews. "A Close Shave" (1995) tops the list with an average rating of 4.49 from 112 ratings. Classic films like "Casablanca" and critically acclaimed movies like "Schindler's List" also feature prominently, indicating a correlation between critical acclaim and user ratings.
+
+5. Top ten users who have rated at least 50 movies, their favourite movie genres, and gender:
+This data provides insights into user preferences. Drama and Comedy are the most common favorite genres among these active users. There's a slight male majority in this group (6 out of 10), but both genders are represented among the most active users.
+
+6. Top ten users with age less than 20 years old:
+This list shows that younger users (under 20) are predominantly male and mostly students. The youngest user is 7 years old, which raises questions about parental supervision or the accuracy of user-reported data.
+
+7. Top ten users who have the occupation 'scientist' and their age is between 30 and 40 years old:
+This group consists entirely of male scientists in their 30s, with ages ranging from 31 to 40. This could indicate a gender imbalance in this particular demographic of the user base, or in the scientific profession during the time this data was collected.
+
+Overall, these outputs provide valuable insights into user demographics, movie preferences, and rating patterns within this dataset. They highlight popular and highly-rated movies, active user characteristics, and some interesting demographic trends among different user groups.
+
