@@ -228,4 +228,79 @@ if __name__ == "__main__":
 ```
     spark.stop()
 ```
-## Output
+
+## Results
+#### Average Rating for Each Movie
+
+| movie_id | title | avg_rating |
+|----------|-------|-------------|
+| 26 | Brothers McMullen, The (1995) | 3.45 |
+| 29 | Batman Forever (1995) | 2.67 |
+| 474 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963) | 4.25 |
+| 964 | Month by the Lake, A (1995) | 3.33 |
+| 1677 | Sweet Nothing (1995) | 3.00 |
+| 65 | What's Eating Gilbert Grape (1993) | 3.54 |
+| 191 | Amadeus (1984) | 4.16 |
+| 418 | Cinderella (1950) | 3.58 |
+| 541 | Mortal Kombat (1995) | 2.88 |
+| 558 | Heavenly Creatures (1994) | 3.67 |
+
+#### Top Ten Movies with the Highest Average Ratings
+
+| movie_id | title | avg_rating | rating_count |
+|----------|-------|-------------|--------------|
+| 1189 | Prefontaine (1997) | 5.0 | 3 |
+| 1467 | Saint of Fort Washington, The (1993) | 5.0 | 2 |
+| 1201 | Marlene Dietrich: Shadow and Light (1996) | 5.0 | 1 |
+| 1599 | Someone Else's America (1995) | 5.0 | 1 |
+| 814 | Great Day in Harlem, A (1994) | 5.0 | 1 |
+| 1653 | Entertaining Angels: The Dorothy Day Story (1996) | 5.0 | 1 |
+| 1122 | They Made Me a Criminal (1939) | 5.0 | 1 |
+| 1500 | Santa with Muscles (1996) | 5.0 | 2 |
+| 1536 | Aiqing wansui (1994) | 5.0 | 1 |
+| 1293 | Star Kid (1997) | 5.0 | 3 |
+
+#### Users Who Have Rated at Least 50 Movies and Their Favourite Genres
+
+| user_id | gender | genre | genre_count |
+|---------|--------|-------|-------------|
+| 26 | M | Drama | 41 |
+| 474 | M | Drama | 166 |
+| 65 | F | Drama | 46 |
+| 541 | F | Comedy | 52 |
+| 222 | M | Comedy | 131 |
+| 270 | F | Drama | 56 |
+| 293 | M | Drama | 165 |
+| 938 | F | Comedy | 40 |
+| 243 | M | Drama | 59 |
+| 367 | M | Horror | 31 |
+
+#### Users with Age Less Than 20 Years Old
+
+| age | gender | occupation | user_id | zip_code |
+|-----|--------|------------|---------|----------|
+| 7 | M | student | 30 | 55436 |
+| 19 | F | student | 36 | 93117 |
+| 18 | F | student | 52 | 55105 |
+| 16 | M | none | 57 | 84010 |
+| 17 | M | student | 67 | 60402 |
+| 19 | M | student | 68 | 22904 |
+| 15 | M | student | 101 | 05146 |
+| 19 | M | student | 110 | 77840 |
+| 13 | M | other | 142 | 48118 |
+| 15 | M | entertainment | 179 | 20755 |
+
+#### Users with Occupation "Scientist" and Age Between 30 and 40 Years Old
+
+| age | gender | occupation | user_id | zip_code |
+|-----|--------|------------|---------|----------|
+| 38 | M | scientist | 40 | 27514 |
+| 39 | M | scientist | 71 | 98034 |
+| 39 | M | scientist | 74 | T8H1N |
+| 39 | M | scientist | 107 | 60466 |
+| 33 | M | scientist | 183 | 27708 |
+| 33 | M | scientist | 272 | 53706 |
+| 40 | M | scientist | 309 | 70802 |
+| 37 | M | scientist | 337 | 10522 |
+| 38 | M | scientist | 430 | 98199 |
+| 31 | M | scientist | 538 | 21010 |
