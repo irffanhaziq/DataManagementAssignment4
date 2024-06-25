@@ -234,16 +234,16 @@ if __name__ == "__main__":
 
 | movie_id | title | avg_rating |
 |----------|-------|-------------|
-| 26 | Brothers McMullen, The (1995) | 3.45 |
-| 29 | Batman Forever (1995) | 2.67 |
-| 474 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963) | 4.25 |
-| 964 | Month by the Lake, A (1995) | 3.33 |
+| 26 | Brothers McMullen, The (1995) | 3.452054794520548 |
+| 29 | Batman Forever (1995) | 2.6666666666666665 |
+| 474 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963) | 4.252577319587629 |
+| 964 | Month by the Lake, A (1995) | 3.3333333333333335 |
 | 1677 | Sweet Nothing (1995) | 3.00 |
-| 65 | What's Eating Gilbert Grape (1993) | 3.54 |
-| 191 | Amadeus (1984) | 4.16 |
-| 418 | Cinderella (1950) | 3.58 |
-| 541 | Mortal Kombat (1995) | 2.88 |
-| 558 | Heavenly Creatures (1994) | 3.67 |
+| 65 | What's Eating Gilbert Grape (1993) | 3.5391304347826087 |
+| 191 | Amadeus (1984) | 4.163043478260869 |
+| 418 | Cinderella (1950) | 3.5813953488372094 |
+| 541 | Mortal Kombat (1995) |2.877551020408163 |
+| 558 | Heavenly Creatures (1994) | 3.6714285714285713 |
 
 #### Top Ten Movies with the Highest Average Ratings
 
@@ -259,6 +259,21 @@ if __name__ == "__main__":
 | 1500 | Santa with Muscles (1996) | 5.0 | 2 |
 | 1536 | Aiqing wansui (1994) | 5.0 | 1 |
 | 1293 | Star Kid (1997) | 5.0 | 3 |
+
+#### Top ten movies with the highest rating count:
+
+|movie_id|title                        |avg_rating        |rating_count|
+|--------|-----------------------------|------------------|------------|
+|50      |Star Wars (1977)             |4.3584905660377355|583         |
+|258     |Contact (1997)               |3.8035363457760316|509         |
+|100     |Fargo (1996)                 |4.155511811023622 |508         |
+|181     |Return of the Jedi (1983)    |4.007889546351085 |507         |
+|294     |Liar Liar (1997)             |3.156701030927835 |485         |
+|286     |English Patient, The (1996)  |3.656964656964657 |481         |
+|288     |Scream (1996)                |3.4414225941422596|478         |
+|1       |Toy Story (1995)             |3.8783185840707963|452         |
+|300     |Air Force One (1997)         |3.6310904872389793|431         |
+|121     |Independence Day (ID4) (1996)|3.438228438228438 |429         |
 
 #### Users Who Have Rated at Least 50 Movies and Their Favourite Genres
 
