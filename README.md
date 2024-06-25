@@ -228,7 +228,68 @@ if __name__ == "__main__":
 ```
     spark.stop()
 ```
+## Keyspace database created in Cassandra.
+### Inside cqlsh
+```
+cqlsh> CREATE KEYSPACE IF NOT EXISTS movielens WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.movie_ratings (
+    movie_id int,
+    title text,
+    avg_rating float,
+    PRIMARY KEY (movie_id)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.top_ten_movies_avg_rating (
+    movie_id int,
+    title text,
+    avg_rating float,
+    rating_count int,
+    PRIMARY KEY (movie_id)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.top_ten_movies_rating_count (
+    movie_id int,
+    title text,
+    avg_rating float,
+    rating_count int,
+    PRIMARY KEY (movie_id)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.popular_movies (
+    movie_id int,
+    title text,
+    avg_rating float,
+    rating_count int,
+    PRIMARY KEY (movie_id)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.favourite_genres (
+    user_id int,
+    gender text,
+    genre text,
+    genre_count int,
+    PRIMARY KEY (user_id, genre)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.young_users (
+    user_id int,
+    age int,
+    gender text,
+    occupation text,
+    zip_code text,
+    PRIMARY KEY (user_id)
+);
+
+cqlsh> CREATE TABLE IF NOT EXISTS movielens.scientist_users (
+    user_id int,
+    age int,
+    gender text,
+    occupation text,
+    zip_code text,
+    PRIMARY KEY (user_id)
+);
+```
 ## Results
 #### Average Rating for Each Movie :
 
