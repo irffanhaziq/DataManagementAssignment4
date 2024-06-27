@@ -419,6 +419,6 @@ This list shows that younger users (under 20) are predominantly male and mostly 
 7. Top ten users who have the occupation 'scientist' and their age is between 30 and 40 years old:
 This group consists entirely of male scientists in their 30s, with ages ranging from 31 to 40. This could indicate a gender imbalance in this particular demographic of the user base, or in the scientific profession during the time this data was collected.
 
-##Conclusion 
+## Conclusion 
 
 The MovieLens dataset provides a rich source of information for building and testing movie recommendation systems, with 100,000 ratings from 943 users on 1,682 movies. Multiple approaches were explored, including knowledge-based, content-based, and collaborative filtering recommender systems.The recommender systems were built using various techniques such as Pandas operations, K-Nearest Neighbors (KNN), Singular Value Decomposition (SVD), and deep learning models incorporating Natural Language Processing (NLP) techniques. These systems were able to suggest movies based on similar users, as well as specific queries related to genre, user preferences, movie attributes, ratings, and popularity. The project demonstrated the effectiveness of different recommendation algorithms in providing personalized movie suggestions, highlighting the potential of such systems in enhancing user experience on movie platforms. The combination of various techniques allowed for a comprehensive approach to movie recommendations, catering to different aspects of user preferences and movie characteristics.
